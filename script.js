@@ -1,5 +1,34 @@
-let player1 = "";
-      let player2 = "";
+ <!-- the entire body must be written by student -->
+    <div class="container">
+      <h1>TIC TAC TOE</h1>
+      <div class="form">
+        <label for="player-1">Player 1</label>
+        <input type="text" id="player-1" placeholder="enter name" />
+        <label for="player-2">Player 2</label>
+        <input type="text" id="player-2" placeholder="enter name" />
+        <button id="submit">Start Game</button>
+      </div>
+
+      <div id="game-board" class="hidden">
+        <h1>Tic Tac Toe</h1>
+        <div class="message" id="turn-message"></div>
+        <div class="board">
+          <div id="1" class="cell"></div>
+          <div id="2" class="cell"></div>
+          <div id="3" class="cell"></div>
+          <div id="4" class="cell"></div>
+          <div id="5" class="cell"></div>
+          <div id="6" class="cell"></div>
+          <div id="7" class="cell"></div>
+          <div id="8" class="cell"></div>
+          <div id="9" class="cell"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let player-1 = "";
+      let player-2 = "";
       let currentPlayer = "";
       let gameBoard = Array(9).fill(null);
       let isGameOver = false;
@@ -63,7 +92,7 @@ let player1 = "";
 
         return winningCombinations.some((combination) => {
           return combination.every((index) => {
-            return gameBoard[index] === (currentPlayer === player1 ? "X" : "O");
+            return gameBoard[index] === (currentPlayer === player-1 ? "X" : "O");
           });
         });
       }
