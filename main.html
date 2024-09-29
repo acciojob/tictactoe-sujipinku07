@@ -100,20 +100,20 @@
     </div>
 
     <script>
-      let player-1 = "";
-      let player-2 = "";
+      let player_1 = "";
+      let player_2 = "";
       let currentPlayer = "";
       let gameBoard = Array(9).fill(null);
       let isGameOver = false;
 
       // Start game button click event
       document.getElementById("submit").addEventListener("click", function () {
-        player1 = document.getElementById("player-1").value;
-        player2 = document.getElementById("player-2").value;
-        if (player-1 && player-2) {
+        player_1 = document.getElementById("player-1").value;
+        player_2 = document.getElementById("player-2").value;
+        if (player_1 && player_2) {
           document.querySelector(".form").classList.add("hidden");
           document.getElementById("game-board").classList.remove("hidden");
-          currentPlayer = player1;
+          currentPlayer = player_1;
           document.getElementById(
             "turn-message"
           ).textContent = `${currentPlayer}, you're up`;
@@ -127,7 +127,7 @@
 
           const cellIndex = this.id - 1;
           if (!gameBoard[cellIndex]) {
-            gameBoard[cellIndex] = currentPlayer === player-1 ? "X" : "O";
+            gameBoard[cellIndex] = currentPlayer === player_1 ? "X" : "O";
             this.textContent = gameBoard[cellIndex];
             this.classList.add("taken");
 
@@ -141,7 +141,7 @@
                 "It's a draw!";
               isGameOver = true;
             } else {
-              currentPlayer = currentPlayer === player-1 ? player-2 : player-1;
+              currentPlayer = currentPlayer === player_1 ? player_2 : player_1;
               document.getElementById(
                 "turn-message"
               ).textContent = `${currentPlayer}, you're up`;
@@ -165,7 +165,7 @@
 
         return winningCombinations.some((combination) => {
           return combination.every((index) => {
-            return gameBoard[index] === (currentPlayer === player-1 ? "X" : "O");
+            return gameBoard[index] === (currentPlayer === player_1 ? "X" : "O");
           });
         });
       }
