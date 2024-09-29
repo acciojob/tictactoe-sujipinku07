@@ -1,10 +1,10 @@
 <div class="container">
       <h1>TIC TAC TOE</h1>
       <div class="form">
-        <label for="player_1">Player 1</label>
-        <input type="text" id="player_1" placeholder="enter name" />
-        <label for="player_2">Player 2</label>
-        <input type="text" id="player_2" placeholder="enter name" />
+        <label for="player-1">Player 1</label>
+        <input type="text" id="player-1" placeholder="enter name" />
+        <label for="player-2">Player 2</label>
+        <input type="text" id="player-2" placeholder="enter name" />
         <button id="submit">Start Game</button>
       </div>
 
@@ -26,16 +26,16 @@
     </div>
 
     <script>
-      let player_1 = "";
-      let player_2 = "";
+      let player1 = "";
+      let player2 = "";
       let currentPlayer = "";
       let gameBoard = Array(9).fill(null);
       let isGameOver = false;
 
       // Start game button click event
       document.getElementById("submit").addEventListener("click", function () {
-        player1 = document.getElementById("player_1").value;
-        player2 = document.getElementById("player_2").value;
+        player1 = document.getElementById("player-1").value;
+        player2 = document.getElementById("player-2").value;
         if (player1 && player2) {
           document.querySelector(".form").classList.add("hidden");
           document.getElementById("game-board").classList.remove("hidden");
@@ -67,7 +67,7 @@
                 "It's a draw!";
               isGameOver = true;
             } else {
-              currentPlayer = currentPlayer === player_1 ? player_2 : player_1;
+              currentPlayer = currentPlayer === player1 ? player2 : player1;
               document.getElementById(
                 "turn-message"
               ).textContent = `${currentPlayer}, you're up`;
@@ -91,7 +91,7 @@
 
         return winningCombinations.some((combination) => {
           return combination.every((index) => {
-            return gameBoard[index] === (currentPlayer === player_1 ? "X" : "O");
+            return gameBoard[index] === (currentPlayer === player1 ? "X" : "O");
           });
         });
       }
